@@ -1,17 +1,18 @@
 {
   "root": true,
   "project": {
-    "name": "gameghorbd"
+    "name": "sanity"
   },
   "api": {
-    "projectId": "qng7d98o",
+    "projectId": "97wt2xam",
     "dataset": "production"
   },
   "plugins": [
     "@sanity/base",
     "@sanity/default-layout",
     "@sanity/default-login",
-    "@sanity/desk-tool"
+    "@sanity/desk-tool",
+    "barcode-input"
   ],
   "env": {
     "development": {

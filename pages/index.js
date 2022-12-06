@@ -7,9 +7,12 @@ import Products from '../components/Products';
 import Navbar from '../components/Navbar';
 import Banner from '../components/Banner';
 import ContextProvider from '../context/StateContext';
+import { sanityClient, urlFor } from '../lib/sanity.server';
+import { groq } from 'next-sanity';
 
-export default function Home() {
+export default function Home({ products, banner }) {
   const { iQty, dQty, qty } = useContext(ContextProvider);
+  console.log(banner);
 
   return (
     <div className='index'>
@@ -21,7 +24,7 @@ export default function Home() {
 
       <main>
         <Navbar />
-        <Banner />
+        <Banner banner={banner} />
         {/* Button Render  */}
         <div className='flex gap-3 p-3 items-center'>
           <button
@@ -39,8 +42,20 @@ export default function Home() {
           </button>
         </div>
         <Products />
+
         <Footer />
       </main>
     </div>
   );
+}
+
+export async function getStaticProps() {
+  const products = await sanityClient.fetch(groq`*[_type == "product"]`);
+  const banner = await sanityClient.fetch(groq`*[_type == "banner"]`);
+  return {
+    props: {
+      products,
+      banner,
+    },
+  };
 }

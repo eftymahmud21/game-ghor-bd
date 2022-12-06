@@ -6,7 +6,10 @@ import g2 from '../images/g2.webp';
 import g3 from '../images/g3.png';
 import g4 from '../images/g4.jpg';
 
+import data from '../data';
+
 function Banner() {
+  const { products } = data;
   return (
     <div className='flex gap-5 overflow-hidden'>
       <Image src={banner} width={400} />
@@ -14,6 +17,7 @@ function Banner() {
       <Image src={g2} width={400} />
       <Image src={g3} width={400} />
       <Image src={g1} width={400} />
+      <Image src={products[0].image} width={400} />
     </div>
   );
 }

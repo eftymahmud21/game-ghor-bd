@@ -19,7 +19,7 @@ const Navbar = () => {
 
         <div className='profile'>
           <Image
-            class='p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500'
+            className='p-1 rounded-full ring-1 ring-gray-300 dark:ring-gray-500'
             src={pp}
             width={45}
             height={45}
