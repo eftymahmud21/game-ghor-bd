@@ -17,7 +17,7 @@ function Banner() {
       <Image src={g2} width={400} />
       <Image src={g3} width={400} />
       <Image src={g1} width={400} />
-      <Image src={products[0].image} width={400} />
+      
     </div>
   );
 }

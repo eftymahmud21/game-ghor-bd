@@ -8,6 +8,6 @@ const nextConfig = {
 
 module.exports = module.exports = {
   images: {
-    domains: ['cdn.shopify.com'],
+    domains: ['https://picsum.photos']
   },
 };
